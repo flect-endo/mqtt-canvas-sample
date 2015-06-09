@@ -120,17 +120,17 @@ gulp.task('bowerInstall', function() {
 
 gulp.task('bundle', ['styles', 'scripts', 'bower'], function() {
     return gulp.src('./app/*.html')
-        .pipe($.useref.assets())
-        .pipe($.useref.restore())
-        .pipe($.useref())
+        // .pipe($.useref.assets())
+        // .pipe($.useref.restore())
+        // .pipe($.useref())
         .pipe(gulp.dest('dist'));
 });
 
 gulp.task('buildBundle', ['styles', 'buildScripts', 'bower'], function() {
     return gulp.src('./app/*.html')
-        .pipe($.useref.assets())
-        .pipe($.useref.restore())
-        .pipe($.useref())
+        // .pipe($.useref.assets())
+        // .pipe($.useref.restore())
+        // .pipe($.useref())
         .pipe(gulp.dest('dist'));
 });
 
