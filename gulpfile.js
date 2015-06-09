@@ -12,6 +12,7 @@ var source = require('vinyl-source-stream'),
     destFolder = './dist/scripts',
     destFileName = 'app.js';
 var browserSync = require('browser-sync');
+var bower = require('gulp-bower');
 var reload = browserSync.reload;
 
 // Styles
@@ -99,7 +100,7 @@ gulp.task('images', function() {
 });
 
 // Fonts
-gulp.task('fonts', ['bower'], function() {
+gulp.task('fonts', ['bowerInstall'], function() {
     return gulp.src(require('main-bower-files')({
             filter: '**/*.{eot,svg,ttf,woff,woff2}'
         }).concat('app/fonts/**/*'))
@@ -113,6 +114,10 @@ gulp.task('clean', function(cb) {
 });
 
 // Bundle
+gulp.task('bowerInstall', function() {
+    return bower();
+});
+
 gulp.task('bundle', ['styles', 'scripts', 'bower'], function() {
     return gulp.src('./app/*.html')
         .pipe($.useref.assets())
