@@ -40,6 +40,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
+    "start": "node server",
+    "postinstall": "gulp build",
     "test": "jest"
   },
   "jest": {
