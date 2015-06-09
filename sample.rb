@@ -1,7 +1,7 @@
 require 'mqtt'
 require 'uri'
 
-MQTT_HOST = "lite.mqtt.shiguredo.jp"
+MQTT_HOST = ENV['MQTT_HOST']
 MQTT_USER = ENV['MQTT_USER']
 MQTT_PASS = ENV['MQTT_PASS']
 
