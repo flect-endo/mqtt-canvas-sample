@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var del = require('del');
-var path = require('path');
 
 // Load plugins
 var $ = require('gulp-load-plugins')();
@@ -37,7 +36,6 @@ gulp.task('stylus', function() {
         .pipe(gulp.dest('dist/styles'))
         .pipe($.size());
 });
-
 
 var bundler = watchify(browserify({
     entries: [sourceFile],
@@ -191,4 +189,4 @@ gulp.task('build', ['html', 'buildBundle', 'images', 'fonts', 'extras'], functio
 });
 
 // Default task
-gulp.task('default', ['clean', 'build'  , 'jest'  ]);
+gulp.task('default', ['clean', 'build']);
