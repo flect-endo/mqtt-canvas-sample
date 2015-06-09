@@ -99,7 +99,7 @@ gulp.task('images', function() {
 });
 
 // Fonts
-gulp.task('fonts', function() {
+gulp.task('fonts', ['bower'], function() {
     return gulp.src(require('main-bower-files')({
             filter: '**/*.{eot,svg,ttf,woff,woff2}'
         }).concat('app/fonts/**/*'))
